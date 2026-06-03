@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "voice-agent-test"
+version = "0.1.0"
+description = "Voice Agent Test Project"
+requires-python = ">=3.12"
+dependencies = [
+    "vision-agents[gemini,getstream]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
